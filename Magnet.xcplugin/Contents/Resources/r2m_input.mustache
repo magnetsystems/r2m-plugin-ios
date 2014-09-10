@@ -1,0 +1,15 @@
++Name {{{methodName}}}
++Request
+{{{httpMethod}}} {{{url}}}
+{{#hasHTTPRequestHeaders}}+Headers{{/hasHTTPRequestHeaders}}
+{{#httpRequestHeaders}}
+{{{field}}}: {{{value}}}
+{{/httpRequestHeaders}}
+{{#httpRequest}}+Body
+{{{httpRequest}}}
+{{/httpRequest}}
+
++Response {{{httpResponseStatusCode}}} {{{httpResponseContentType}}}
+
++Body
+{{{httpResponse}}}
