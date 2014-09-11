@@ -10,5 +10,5 @@ Go to https://github.com/magnetsystems/r2m-plugin-ios/releases
 
 ## Documentation
 
-For instructions on how to install and use the plugin, see [here](https://github.com/magnetsystems/r2m-plugin-ios/wiki).
+For instructions on how to install and use the plugin, see the [wiki](https://github.com/magnetsystems/r2m-plugin-ios/wiki).
 
