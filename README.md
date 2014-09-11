@@ -1,8 +1,14 @@
-r2m-plugin-ios
+rest2mobile plugin for Xcode
 ==============
 
-rest2mobile IDE Plugin for XCode
+The rest2mobile plugin for Xcode generates REST code for your mobile app to interface with REST services.
 
 Releases
 --------
+
 Go to https://github.com/magnetsystems/r2m-plugin-ios/releases
+
+## Documentation
+
+For instructions on how to install and use the plugin, see [here](https://github.com/magnetsystems/r2m-plugin-ios/wiki).
+
