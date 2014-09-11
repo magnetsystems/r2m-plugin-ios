@@ -6,7 +6,7 @@ The rest2mobile plugin for Xcode generates REST code for your mobile app to inte
 Releases
 --------
 
-Go to https://github.com/magnetsystems/r2m-plugin-ios/releases
+Go to https://github.com/magnetsystems/r2m-plugin-ios/releases.
 
 ## Documentation
 
