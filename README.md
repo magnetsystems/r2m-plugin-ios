@@ -1,7 +1,7 @@
 rest2mobile plugin for Xcode
 ==============
 
-The rest2mobile plugin for Xcode generates Objective-C code for your iOS app to interface with REST services.
+The rest2mobile plugin for Xcode generates Objective-C code for your iOS app to interface with REST services. You can find a video [here](http://youtu.be/6qVBB5bKCaM) describing how install and use it.
 
 ### Prerequisites
 The rest2mobile plugin for Xcode has these prerequisites:
