@@ -63,13 +63,13 @@ You should also see an error in the debug area window if you haven't installed t
 ![rest2mobile podfile warning](doc/img/R2M-podfile-warning.jpg)
 
 In this case, close Xcode, and apply the podfile in th
-Go to your Xcode project folder and create the following Podfile:
+
+Go to your Xcode project folder and create the following Podfile, be sure to replace <code>r2mdemoTests</code> with the actual test directory name corresponding to your project.
 ```
 platform :ios, '7.0'
 pod 'Rest2Mobile', '~> 1.1'
 
-# Add Kiwi as an exclusive dependency for the AmazingAppTests target
-target :AmazingAppTests, :exclusive => true do
+target :r2mdemoTests, :exclusive => true do
   pod 'Kiwi'
 end
 ```
@@ -78,17 +78,15 @@ Run the following command from your project directory:
 ``` 
  > pod install
 ``` 
-Open your project using the .xcworkspace file.
+__IMPORTANT__ ! you must re-open your project using the .xcworkspace file (in our case <code>r2mdemo.xcworkspace</code>)
 
-You are now ready to use the controller in your classes.
 
 __STEP 5: Test__
 
 Use the generated unit test generated under <code><projectName>Tests</code>. In this example, it will be
-<code>r2mdemo/r2mdemoTests/GoogleDistanceTests.m
+<code>r2mdemo/r2mdemoTests/r2m/Controllers/GoogleDistanceSpec.m</code>
 
-
-Ex: if you generated the <code>GoogleDistance</code> native API, the unit test can be found atr <code>src/androidTest/java/com/magnetapi/examples/controller/api/test/GoogleDistanceTest</code>. Remove the <code>@Supress</code> annotation on <code>testGoogleDistance</code>, and invoke the API with real values:
+Remove the <code>@Supress</code> annotation on <code>testGoogleDistance</code>, and invoke the API with real values:
 
 ## License
 
