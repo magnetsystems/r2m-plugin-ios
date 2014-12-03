@@ -21,7 +21,7 @@ Current release:
 
 The following picture is a screenshot of the plugin: 
 
-![rest2mobile plugin for Xcode](doc/img/r2m-add-api.jpg)
+![rest2mobile plugin for Xcode](doc/img/R2M-add-api.jpg)
 
 
 ## Setup
