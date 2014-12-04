@@ -16,7 +16,7 @@ The rest2mobile plugin for Xcode has these prerequisites:
 Find all releases [here](https://github.com/magnetsystems/r2m-plugin-ios/releases).
 
 Current release:
-* [1.1.1](https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.1)
+* [1.1.1](https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.1/r2m-Xcode-plugin.zip)
  
 
 The following picture is a screenshot of the plugin: 
@@ -63,16 +63,16 @@ For example, let's say you decided to use the <code>GoogleDistance</code> built-
 
 __NOTE__ in the rest of this tutorial, we assume that your project name is 'r2mdemo'
 
-__Step 4: Apply PodFile__
+__Step 4: Apply Podfile__
 
 You should also see an error in the debug area window if you haven't installed the R2M SDK for iOS. 
 
 ![rest2mobile podfile warning](doc/img/R2M-podfile-warning.jpg)
 
 
-In this case, copy the PodFile snippet, and close Xcode. Then go to your Xcode project folder and create a podFile and paste the Podfile snippet into it. 
+In this case, copy the Podfile snippet, and close Xcode. Then go to your Xcode project folder and create a podFile and paste the Podfile snippet into it. 
 It should look like this, be sure to replace <code>r2mdemoTests</code> with the actual test directory name corresponding to your project ({YourProjectName}Tests)
-```
+```ruby
 platform :ios, '7.0'
 pod 'Rest2Mobile', '~> 1.1'
 
