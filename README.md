@@ -50,9 +50,9 @@ Alternatively, instead of crafting your own REST invocations, you can load exist
 
 __STEP 3: Generate code__
 
-Click on "Generate", this generates the code under the <code>r2m</code> directory.A Kiwi unit test file is also generated under the <code><projectName>Tests</code> directory.
+After filling the form, click on "Generate" to generate the code. This generates code under the <code>r2m</code> directory. A Kiwi unit test file is also generated under the <code><projectName>Tests</code> directory.
 
-For example, let's say you decided to use the <code>GoogleDistance</code> built-in example. Select it from the drop-down menu, and specify a prefix (say, <code>GG</code>). After generating, you should see the controller, node, and test classes. 
+For example, let's say you decided to use the <code>GoogleDistance</code> built-in example. Select it from the drop-down menu, and specify a prefix (say, <code>GG</code>). Click on "Generate", you should now see the controller, node, and test classes:
 * Controller classes are generated under <code><ProjectName>/r2m/Controllers</code> 
 * Test class is generated under <code><ProjectName>Tests/r2m/Controllers</code> 
 * Model classes are generated under <code><ProjectName>/r2m/Nodes</code> 
@@ -64,13 +64,13 @@ __NOTE__ in the rest of this tutorial, we assume that your project name is 'r2md
 
 __Step 4: Apply PodFile__
 
-You should also see an error in the debug area window if you haven't installed the R2M SDK for Android. 
+You should also see an error in the debug area window if you haven't installed the R2M SDK for iOS. 
 
 ![rest2mobile podfile warning](doc/img/R2M-podfile-warning.jpg)
 
-In this case, close Xcode, and apply the podfile in th
 
-Go to your Xcode project folder and create the following Podfile, be sure to replace <code>r2mdemoTests</code> with the actual test directory name corresponding to your project.
+In this case, copy the PodFile snippet, and close Xcode. Then go to your Xcode project folder and create a podFile and paste the Podfile snippet into it. 
+It should look like this, be sure to replace <code>r2mdemoTests</code> with the actual test directory name corresponding to your project (<projectName>Tests)
 ```
 platform :ios, '7.0'
 pod 'Rest2Mobile', '~> 1.1'
@@ -80,7 +80,7 @@ target :r2mdemoTests, :exclusive => true do
 end
 ```
 
-Run the following command from your project directory:
+Now install the pod dependencies by running following command from your project directory:
 ``` 
  > pod install
 ``` 
@@ -156,21 +156,23 @@ SPEC_END
 
 ```
 
+In this tests, we import the header files corresponding to the generated model and controller classes. The test calls the google distance REST API through the GoogleDistanceController to calculate the distance between 2 addresses in kilometers. 
+Finally, it verifies that the distance value.
+
 Now run the test, by clicking on Run->Test (Command+U). 
 You'll see the test failing with the error:
 ```
 [FAILED] expected subject to equal (NSString) "some value", got "55.6km"
 ```
-In a true Test Driven development manner, we made it fail first, now replace "some value" with "55.6km"
-Replace the line:
-```
-// Assert
-            [[expectFutureValue(_distance) shouldEventuallyBeforeTimingOutAfter(DEFAULT_TEST_TIMEOUT)] equal:@"some value"];
+In a true Test Driven development fashion, we made the test fail first, now replace "some value" with "55.6km"
+
+That is, replace the line:
+```objective-c
+[[expectFutureValue(_distance) shouldEventuallyBeforeTimingOutAfter(DEFAULT_TEST_TIMEOUT)] equal:@"some value"];
 ```
 with
-```
-// Assert
-            [[expectFutureValue(_distance) shouldEventuallyBeforeTimingOutAfter(DEFAULT_TEST_TIMEOUT)] equal:@"55.6km"];
+```objective-c
+[[expectFutureValue(_distance) shouldEventuallyBeforeTimingOutAfter(DEFAULT_TEST_TIMEOUT)] equal:@"55.6km"];
 ```
 
 And re-run the test (Run->Test or Command+U). The test is now successful.
