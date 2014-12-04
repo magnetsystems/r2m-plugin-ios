@@ -92,7 +92,7 @@ __STEP 5: Test__
 Use the generated unit test generated under <code><projectName>Tests</code>. In this example, it will be
 <code>r2mdemo/r2mdemoTests/r2m/Controllers/GoogleDistanceSpec.m</code>
 
-This test is a template class, you can adapt it with the following code:
+This test is a template class, you can adapt it with the following code.
 ```objective-c
 //
 //  GGGoogleDistanceSpec.m
@@ -105,6 +105,8 @@ This test is a template class, you can adapt it with the following code:
 #import "GGGoogleDistanceResult.h"
 #import "GGGoogleDistance.h"
 #import "GGGoogleDistanceResult.h"
+#import "GGElement.h"
+#import "GGRow.h"
 #import "GGDistance.h"
 
 #define DEFAULT_TEST_TIMEOUT 5.0
@@ -119,17 +121,14 @@ describe(@"GGGoogleDistance", ^{
     context(@"when calling googleDistance", ^{
 
         it(@"should invoke", ^{
-            // FIXME: Set the expected output
-            GGGoogleDistanceResult *output;
-            // FIXME: Set the input parameter(s)
-            NSString *origins;
-            NSString *destinations;
-            NSString *sensor;
-            NSString *mode;
-            NSString *language;
-            NSString *units;
+            NSString *origins = @"435 Tasso Street, Palo Alto, CA";
+            NSString *destinations = @"1 Embarcadero Street, San Francisco, CA";
+            NSString *sensor = @"false";
+            NSString *mode = @"bicycling";
+            NSString *language = @"en";
+            NSString *units = @"metric";
 
-            __block GGGoogleDistanceResult *_response;
+            __block NSString *_distance;
             [sut googleDistance:origins
                    destinations:destinations
                          sensor:sensor
@@ -137,13 +136,16 @@ describe(@"GGGoogleDistance", ^{
                        language:language
                           units:units
                         success:^(GGGoogleDistanceResult *response){
-                           _response = response;
+                            GGRow *row = response.rows.firstObject;
+                            GGElement *element = row.elements.firstObject;
+                            GGDistance *distance = element.distance;
+                            _distance = distance.text;
                         }
                         failure:^(NSError *error){
                         }];
 
             // Assert
-            [[expectFutureValue(_response) shouldEventuallyBeforeTimingOutAfter(DEFAULT_TEST_TIMEOUT)] equal:output];
+            [[expectFutureValue(_distance) shouldEventuallyBeforeTimingOutAfter(DEFAULT_TEST_TIMEOUT)] equal:@"some value"];
         });
     });
 
@@ -151,20 +153,27 @@ describe(@"GGGoogleDistance", ^{
 });
 
 SPEC_END
+
 ```
 
 Now run the test, by clicking on Run->Test (Command+U). 
 You'll see the test failing with the error:
 ```
+[FAILED] expected subject to equal (NSString) "some value", got "55.6km"
 ```
+In a true Test Driven development manner, we made it fail first, now replace "some value" with "55.6km"
 Replace the line:
 ```
+// Assert
+            [[expectFutureValue(_distance) shouldEventuallyBeforeTimingOutAfter(DEFAULT_TEST_TIMEOUT)] equal:@"some value"];
 ```
 with
 ```
+// Assert
+            [[expectFutureValue(_distance) shouldEventuallyBeforeTimingOutAfter(DEFAULT_TEST_TIMEOUT)] equal:@"55.6km"];
 ```
 
-And re-run the test (Run->Test or Command+U). Test is successful.
+And re-run the test (Run->Test or Command+U). The test is now successful.
 
 Congratulations! You created the Google Distance controller using Rest2Mobile! You can now create your own controller for any REST API that you want. 
 
