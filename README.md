@@ -50,12 +50,13 @@ Alternatively, instead of crafting your own REST invocations, you can load exist
 
 __STEP 3: Generate code__
 
-After filling the form, click on "Generate" to generate the code. This generates code under the <code>r2m</code> directory. A Kiwi unit test file is also generated under the <code><projectName>Tests</code> directory.
+After filling the form, click on "Generate" to generate the code. This generates code under the <code>r2m</code> directory. A Kiwi unit test file is also generated under the YourProjectNameTests directory.
 
 For example, let's say you decided to use the <code>GoogleDistance</code> built-in example. Select it from the drop-down menu, and specify a prefix (say, <code>GG</code>). Click on "Generate", you should now see the controller, node, and test classes:
-* Controller classes are generated under <code><ProjectName>/r2m/Controllers</code> 
-* Test class is generated under <code><ProjectName>Tests/r2m/Controllers</code> 
-* Model classes are generated under <code><ProjectName>/r2m/Nodes</code> 
+(here the project name is r2mdemo)
+* Controller classes are generated under r2mdemo/r2m/Controllers
+* Test class is generated under r2mdemoTests/r2m/Controllers
+* Model classes are generated under r2mdemo/r2m/Nodes
 
 
 ![rest2mobile generated classes](doc/img/R2M-generated-classes.jpg)
@@ -70,7 +71,7 @@ You should also see an error in the debug area window if you haven't installed t
 
 
 In this case, copy the PodFile snippet, and close Xcode. Then go to your Xcode project folder and create a podFile and paste the Podfile snippet into it. 
-It should look like this, be sure to replace <code>r2mdemoTests</code> with the actual test directory name corresponding to your project (<projectName>Tests)
+It should look like this, be sure to replace <code>r2mdemoTests</code> with the actual test directory name corresponding to your project ({YourProjectName}Tests)
 ```
 platform :ios, '7.0'
 pod 'Rest2Mobile', '~> 1.1'
@@ -84,12 +85,12 @@ Now install the pod dependencies by running following command from your project 
 ``` 
  > pod install
 ``` 
-__IMPORTANT__ ! you must re-open your project using the <projectName>.xcworkspace file (in our case <code>r2mdemo.xcworkspace</code>)
+__IMPORTANT__ ! you must re-open your project using the .xcworkspace file (in our case <code>r2mdemo.xcworkspace</code>)
 
 
 __STEP 5: Test__
 
-Use the generated unit test generated under <code><projectName>Tests</code>. In this example, it will be
+Use the generated unit test generated under YourProjectNameTests. In this example, it will be
 <code>r2mdemo/r2mdemoTests/r2m/Controllers/GoogleDistanceSpec.m</code>
 
 This test is a template class, you can adapt it with the following code.
