@@ -36,11 +36,11 @@ unzip -o r2m-Xcode-plugin.zip -d ~/Library/Application\ Support/Developer/Shared
 ```
 
 __Step 2: (Re)start XCode__
-Once Xcode is up, you should see the new Magnet menu:
+Once Xcode is up, you should see the new R2M menu (on older version this menu is named "Magnet"):
 
 ![rest2mobile plugin main menu](doc/img/R2M-menu.jpg)
 
-Choose "Add new API" from the Magnet menu. The following describes the wizard options:
+Choose "Add new API" from the R2M menu (or "Magnet" menu on older version). The following describes the wizard options:
 
 ![rest2mobile plugin wizard](doc/img/R2M-wizard-description.jpg)
 
