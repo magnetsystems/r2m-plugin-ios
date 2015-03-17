@@ -16,10 +16,10 @@ The rest2mobile plugin for Xcode has these prerequisites:
 Find all releases [here](https://github.com/magnetsystems/r2m-plugin-ios/releases).
 
 Current release:
-* [1.1.1](https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.1/r2m-Xcode-plugin.zip)
- 
+* [1.1.2](https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.2/r2m-Xcode-plugin.zip)
 
-The following picture is a screenshot of the plugin: 
+
+The following picture is a screenshot of the plugin:
 
 ![rest2mobile plugin for Xcode](doc/img/R2M-add-api.jpg)
 
@@ -30,7 +30,7 @@ __Step 1: Install plugin__
 The installation instructions are summarized [here](http://developer.magnet.com/ios) or simply run this script:
 
 ```
-curl https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.1/r2m-Xcode-plugin.zip -O -L
+curl https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.2/r2m-Xcode-plugin.zip -O -L
 mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins
 unzip -o r2m-Xcode-plugin.zip -d ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins
 ```
@@ -65,12 +65,12 @@ __NOTE__ in the rest of this tutorial, we assume that your project name is 'r2md
 
 __Step 4: Apply Podfile__
 
-You should also see an error in the debug area window if you haven't installed the R2M SDK for iOS. 
+You should also see an error in the debug area window if you haven't installed the R2M SDK for iOS.
 
 ![rest2mobile podfile warning](doc/img/R2M-podfile-warning.jpg)
 
 
-In this case, copy the Podfile snippet, and close Xcode. Then go to your Xcode project folder and create a podFile and paste the Podfile snippet into it. 
+In this case, copy the Podfile snippet, and close Xcode. Then go to your Xcode project folder and create a Podfile and paste the Podfile snippet into it.
 It should look like this, be sure to replace <code>r2mdemoTests</code> with the actual test directory name corresponding to your project ({YourProjectName}Tests)
 ```ruby
 platform :ios, '7.0'
@@ -82,9 +82,9 @@ end
 ```
 
 Now install the pod dependencies by running following command from your project directory:
-``` 
+```
  > pod install
-``` 
+```
 __IMPORTANT__ ! you must re-open your project using the .xcworkspace file (in our case <code>r2mdemo.xcworkspace</code>)
 
 
@@ -157,10 +157,10 @@ SPEC_END
 
 ```
 
-In this tests, we import the header files corresponding to the generated model and controller classes. The test calls the google distance REST API through the GoogleDistanceController to calculate the distance between 2 addresses in kilometers. 
+In this tests, we import the header files corresponding to the generated model and controller classes. The test calls the google distance REST API through the GoogleDistanceController to calculate the distance between 2 addresses in kilometers.
 Finally, it verifies that the distance value.
 
-Now run the test, by clicking on Run->Test (Command+U). 
+Now run the test, by clicking on Run->Test (Command+U).
 You'll see the test failing with the error:
 ```
 [FAILED] expected subject to equal (NSString) "some value", got "55.6km"
@@ -178,7 +178,12 @@ with
 
 And re-run the test (Run->Test or Command+U). The test is now successful.
 
-Congratulations! You created the Google Distance controller using Rest2Mobile! You can now create your own controller for any REST API that you want. 
+Congratulations! You created the Google Distance controller using Rest2Mobile! You can now create your own controller for any REST API that you want.
+
+## Uninstall
+
+For v1.1.2+, run `rm -r ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/R2M.xcplugin/`
+For earlier versions, run `rm -r ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Magnet.xcplugin/`
 
 ## License
 
