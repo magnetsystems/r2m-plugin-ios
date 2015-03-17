@@ -183,6 +183,7 @@ Congratulations! You created the Google Distance controller using Rest2Mobile! Y
 ## Uninstall
 
 For v1.1.2+, run `rm -r ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/R2M.xcplugin/`
+
 For earlier versions, run `rm -r ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Magnet.xcplugin/`
 
 ## License
