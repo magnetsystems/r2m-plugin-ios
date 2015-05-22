@@ -16,7 +16,7 @@ The rest2mobile plugin for Xcode has these prerequisites:
 Find all releases [here](https://github.com/magnetsystems/r2m-plugin-ios/releases).
 
 Current release:
-* [1.1.3](https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.3/r2m-Xcode-plugin.zip)
+* [1.1.4](https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.4/r2m-Xcode-plugin.zip)
 
 
 The following picture is a screenshot of the plugin:
@@ -30,7 +30,7 @@ __Step 1: Install plugin__
 The installation instructions are summarized [here](http://developer.magnet.com/ios) or simply run this script:
 
 ```
-curl https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.3/r2m-Xcode-plugin.zip -O -L
+curl https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.4/r2m-Xcode-plugin.zip -O -L
 mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins
 unzip -o r2m-Xcode-plugin.zip -d ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins
 ```
